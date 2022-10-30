@@ -12,7 +12,7 @@ from PlayDB_scraping import *
 def main():
     # ----------------------------------------------------------------------------------------------------------------
     # data 파일의 api_url_dict 속 개별 URL에 대해 api_extract 함수 실행 -> CultureClass 객체로 저장
-    [api_extract(n, u) for n, u in data.api_url_dict]
+    [api_extract(n, u) for n, u in data.api_url]
 
     remove_past_event('fstvlEndDate')  # 축제 행사 관련, 종료 날짜가 지난 행사 삭제
     remove_past_event('eventEndDate')  # 공연 행사 관련, 종료 날짜가 지난 행사 삭제

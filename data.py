@@ -1,7 +1,7 @@
-#-*-coding: utf-8-*-
-#-*-coding: euc-kr-*-
+# -*-coding: utf-8-*-
+# -*-coding: euc-kr-*-
 
-api_url_dict = {
+api_url = {
     'Festival': 'http://api.data.go.kr/openapi/tn_pubr_public_cltur_fstvl_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=json',
     'Museum & Art': 'http://api.data.go.kr/openapi/tn_pubr_public_museum_artgr_info_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=json',
     'Show': 'http://api.data.go.kr/openapi/tn_pubr_public_pblprfr_event_info_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=json',
@@ -12,6 +12,30 @@ api_url_dict = {
     'Relics': 'http://api.data.go.kr/openapi/tn_pubr_public_nvpc_cltur_relics_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=xml',
     'Library': 'http://api.data.go.kr/openapi/tn_pubr_public_lbrry_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=xml',
     # 'City Park': 'http://api.data.go.kr/openapi/tn_pubr_public_cty_park_info_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=xml'
+}
+
+playDB_url = {
+    'playDB_musical_url': [
+        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000001&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000001&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
+    'playDB_theatre_url': [
+        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000002&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000002&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
+    'playDB_concert_url': [
+        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000003&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000003&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
+    'playDB_dance_url': [
+        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000004&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000004&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
+    'playDB_classic_opera_url': [
+        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000005&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000005&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
+    'playDB_magic_url': [
+        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000006&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000006&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
+    'playDB_traditional_music_url': [
+        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000007&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000007&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1']
 }
 
 etc_class_list = [
@@ -31,7 +55,7 @@ etc_class_list = [
         "팝업",
         "2022-10-22", "2022-12-04",
         "서울특별시 마포구 양화로 176 와이즈파크 B2",
-        "11:00", "20:00", "11:00",  "19:30",
+        "11:00", "20:00", "11:00", "19:30",
         "0",
         """
         코카-콜라 크리에디션 그 세번째 이야기

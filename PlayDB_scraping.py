@@ -3,3 +3,19 @@
 # https://riucc.tistory.com/373?category=743461
 
 # selenium module을 활용하여 자료를 추출
+
+import csv
+from selenium import webdriver
+
+driver = webdriver.Chrome()
+
+
+
+def playDB_detail_url(detail_num):
+    return 'http://www.playdb.co.kr/playdb/playdbDetail.asp?sReqPlayno=' + detail_num
+
+
+# driver.get(url)
+
+
+xpath_default='/html/body/div[1]/div[2]/div[2]/table/tbody/tr[9]/td/table/tbody/tr[3]/td/table/tbody/tr/td[1]/table/tbody/tr/td[3]/table/tbody/tr[1]/td/b/font/a'
