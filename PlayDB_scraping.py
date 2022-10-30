@@ -28,14 +28,21 @@ options.headless = False
 driver = webdriver.Chrome(options=options)
 driver.get(playDB_url['playDB_musical_url'][0])
 
+links = []
+
 for t in driver.find_elements(By.CSS_SELECTOR, 'a[onclick]')[1:]:
+    element1 = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'a[onclick]')))
     detailNum = t.get_attribute('onclick')
     print(detailNum)
     print(playDB_detail_url(detailNum))
-    element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'a[onclick]')))
 
-    driver.get(playDB_detail_url(detailNum))
+    links.append(playDB_detail_url(detailNum))
+
+for k in links:
+    driver.get(k)
     for n in driver.find_elements(By.CSS_SELECTOR, 'a[target=_parent]'):
+        element2 = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'a[target=_parent]')))
         print(n.text)
-        element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'a[target=_parent]')))
+    print("---------------------------------------------------------------------------------------------")
 
+driver.close()
