@@ -2,40 +2,40 @@
 # -*-coding: euc-kr-*-
 
 api_url = {
-    'Festival': 'http://api.data.go.kr/openapi/tn_pubr_public_cltur_fstvl_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=json',
-    'Museum & Art': 'http://api.data.go.kr/openapi/tn_pubr_public_museum_artgr_info_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=json',
-    'Show': 'http://api.data.go.kr/openapi/tn_pubr_public_pblprfr_event_info_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=json',
-    'City tour': 'http://api.data.go.kr/openapi/tn_pubr_public_city_tour_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=1&numOfRows=100&type=json',
-    'Recreational Forest': 'http://api.data.go.kr/openapi/tn_pubr_public_rcrfrst_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=xml',
-    'Boulevard': 'http://api.data.go.kr/openapi/tn_pubr_public_sttree_stret_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=xml',
-    'Tourist Attraction': 'http://api.data.go.kr/openapi/tn_pubr_public_sttree_stret_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=xml',
-    'Relics': 'http://api.data.go.kr/openapi/tn_pubr_public_nvpc_cltur_relics_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=xml',
-    'Library': 'http://api.data.go.kr/openapi/tn_pubr_public_lbrry_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=xml',
+    'Festival': 'https://api.data.go.kr/openapi/tn_pubr_public_cltur_fstvl_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=json',
+    'Museum & Art': 'https://api.data.go.kr/openapi/tn_pubr_public_museum_artgr_info_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=json',
+    'Show': 'https://api.data.go.kr/openapi/tn_pubr_public_pblprfr_event_info_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=json',
+    'City tour': 'https://api.data.go.kr/openapi/tn_pubr_public_city_tour_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=1&numOfRows=100&type=json',
+    'Recreational Forest': 'https://api.data.go.kr/openapi/tn_pubr_public_rcrfrst_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=xml',
+    'Boulevard': 'https://api.data.go.kr/openapi/tn_pubr_public_sttree_stret_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=xml',
+    'Tourist Attraction': 'https://api.data.go.kr/openapi/tn_pubr_public_sttree_stret_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=xml',
+    'Relics': 'https://api.data.go.kr/openapi/tn_pubr_public_nvpc_cltur_relics_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=xml',
+    'Library': 'https://api.data.go.kr/openapi/tn_pubr_public_lbrry_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=xml',
     # 'City Park': 'http://api.data.go.kr/openapi/tn_pubr_public_cty_park_info_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=xml'
 }
 
 playDB_url = {
     'playDB_musical_url': [
-        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000001&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
-        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000001&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
+        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000001&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000001&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
     'playDB_theatre_url': [
-        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000002&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
-        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000002&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
+        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000002&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000002&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
     'playDB_concert_url': [
-        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000003&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
-        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000003&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
+        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000003&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000003&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
     'playDB_dance_url': [
-        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000004&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
-        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000004&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
+        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000004&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000004&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
     'playDB_classic_opera_url': [
-        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000005&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
-        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000005&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
+        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000005&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000005&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
     'playDB_magic_url': [
-        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000006&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
-        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000006&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
+        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000006&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000006&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
     'playDB_traditional_music_url': [
-        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000007&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
-        'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000007&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1']
+        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000007&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000007&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1']
 }
 
 etc_class = [

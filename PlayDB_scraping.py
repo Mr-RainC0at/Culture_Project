@@ -2,20 +2,40 @@
 # https://riucc.tistory.com/372
 # https://riucc.tistory.com/373?category=743461
 
-# selenium module을 활용하여 자료를 추출
+# selenium module 활용하여 자료를 추출
 
 import csv
 from selenium import webdriver
-
-driver = webdriver.Chrome()
-
-
-
-def playDB_detail_url(detail_num):
-    return 'http://www.playdb.co.kr/playdb/playdbDetail.asp?sReqPlayno=' + detail_num
-
-
-# driver.get(url)
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+import chromedriver_autoinstaller
+from data import playDB_url
+import time
 
 
-xpath_default='/html/body/div[1]/div[2]/div[2]/table/tbody/tr[9]/td/table/tbody/tr[3]/td/table/tbody/tr/td[1]/table/tbody/tr/td[3]/table/tbody/tr[1]/td/b/font/a'
+def playDB_detail_url(onclick_value):
+    detail_num = onclick_value.split('\'')[1]
+    return 'https://www.playdb.co.kr/playdb/playdbDetail.asp?sReqPlayno=' + detail_num
+
+
+chromedriver_autoinstaller.install()
+
+options = Options()
+options.headless = False
+
+driver = webdriver.Chrome(options=options)
+driver.get(playDB_url['playDB_musical_url'][0])
+
+for t in driver.find_elements(By.CSS_SELECTOR, 'a[onclick]')[1:]:
+    detailNum = t.get_attribute('onclick')
+    print(detailNum)
+    print(playDB_detail_url(detailNum))
+    element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'a[onclick]')))
+
+    driver.get(playDB_detail_url(detailNum))
+    for n in driver.find_elements(By.CSS_SELECTOR, 'a[target=_parent]'):
+        print(n.text)
+        element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'a[target=_parent]')))
+
