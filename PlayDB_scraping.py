@@ -4,15 +4,14 @@
 
 # selenium module 활용하여 자료를 추출
 
-import csv
 from selenium import webdriver
+from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 import chromedriver_autoinstaller
 from data import playDB_url
-import time
 
 
 def playDB_detail_url(onclick_value):
@@ -23,26 +22,83 @@ def playDB_detail_url(onclick_value):
 chromedriver_autoinstaller.install()
 
 options = Options()
-options.headless = False
+options.headless = True
 
 driver = webdriver.Chrome(options=options)
-driver.get(playDB_url['playDB_musical_url'][0])
 
-links = []
 
-for t in driver.find_elements(By.CSS_SELECTOR, 'a[onclick]')[1:]:
-    element1 = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'a[onclick]')))
-    detailNum = t.get_attribute('onclick')
-    print(detailNum)
-    print(playDB_detail_url(detailNum))
+for url in playDB_url['playDB_musical_url']:
 
-    links.append(playDB_detail_url(detailNum))
+    driver.get(url)
+    all_pages = 0
 
-for k in links:
-    driver.get(k)
-    for n in driver.find_elements(By.CSS_SELECTOR, 'a[target=_parent]'):
-        element2 = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'a[target=_parent]')))
+    for n in driver.find_elements(By.XPATH, '//*[@id="contents"]/div[2]/table/tbody/tr[8]/td/table/tbody/tr[2]/td/table/tbody/tr/td[1]/table/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/a[1]/b/font'):  # 제목
+        element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="contents"]/div[2]/table/tbody/tr[8]/td/table/tbody/tr[2]/td/table/tbody/tr/td[1]/table/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/a[1]/b/font')))
         print(n.text)
-    print("---------------------------------------------------------------------------------------------")
+        all_pages += int(int(n.text[n.text.find("(") + 1:n.text.find(")")])/15)+1
+    driver.refresh()
 
+    for page in range(all_pages):
+        try:
+            links = []
+
+            url = url[0:52] + str(page) + url[53:]
+            print(url)
+            driver.get(url)
+
+            for t in driver.find_elements(By.CSS_SELECTOR, 'a[onclick]')[1:]:
+                element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'a[onclick]')))
+                detailNum = t.get_attribute('onclick')
+                print(detailNum)
+                print(playDB_detail_url(detailNum))
+
+                links.append(playDB_detail_url(detailNum))
+
+            for k in links:
+                driver.get(k)
+                for n in driver.find_elements(By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[1]/table/tbody/tr[1]/td/span[1]'):  # 제목
+                    element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[1]/table/tbody/tr[1]/td/span[1]')))
+                    print(n.text)
+                driver.refresh()
+
+                for n in driver.find_elements(By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[3]/td[2]/a'):  # 장소
+                    element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[3]/td[2]/a')))
+                    print(n.text)
+                driver.refresh()
+
+                for n in driver.find_elements(By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[2]/td[2]'):  # 날짜
+                    element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[2]/td[2]')))
+                    print(n.text)
+                driver.refresh()
+
+                for n in driver.find_elements(By.CSS_SELECTOR, 'a[target=_parent]'):  # 출연진
+                    element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'a[target=_parent]')))
+                    print(n.text)
+                driver.refresh()
+
+                for n in driver.find_elements(By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[5]/td[2]'):  # 관람 등급
+                    element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[5]/td[2]')))
+                    print(n.text)
+                driver.refresh()
+
+                for n in driver.find_elements(By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[6]/td[2]'):  # 관람 등급
+                    element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[6]/td[2]')))
+                    print(n.text)
+                driver.refresh()
+
+                for n in driver.find_elements(By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[7]/td[2]/a'):  # 사이트
+                    element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[7]/td[2]/a')))
+                    print(n.text)
+                driver.refresh()
+
+                for n in driver.find_elements(By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/p/a'):  # 예매 사이트
+                    element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/p/a')))
+                    print(n.get_property('href'))
+                driver.refresh()
+
+                print("---------------------------------------------------------------------------------------------")
+        except NoSuchElementException:
+            pass
+
+print("close")
 driver.close()

@@ -16,26 +16,26 @@ api_url = {
 
 playDB_url = {
     'playDB_musical_url': [
-        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000001&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
-        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000001&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
+        'https://www.playdb.co.kr/playdb/playdblist.asp?Page=1&sReqMainCategory=000001&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'https://www.playdb.co.kr/playdb/playdblist.asp?Page=1&sReqMainCategory=000001&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
     'playDB_theatre_url': [
-        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000002&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
-        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000002&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
+        'https://www.playdb.co.kr/playdb/playdblist.asp?Page=1&sReqMainCategory=000002&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'https://www.playdb.co.kr/playdb/playdblist.asp?Page=1&sReqMainCategory=000002&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
     'playDB_concert_url': [
-        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000003&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
-        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000003&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
+        'https://www.playdb.co.kr/playdb/playdblist.asp?Page=1&sReqMainCategory=000003&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'https://www.playdb.co.kr/playdb/playdblist.asp?Page=1&sReqMainCategory=000003&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
     'playDB_dance_url': [
-        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000004&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
-        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000004&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
+        'https://www.playdb.co.kr/playdb/playdblist.asp?Page=1&sReqMainCategory=000004&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'https://www.playdb.co.kr/playdb/playdblist.asp?Page=1&sReqMainCategory=000004&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
     'playDB_classic_opera_url': [
-        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000005&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
-        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000005&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
+        'https://www.playdb.co.kr/playdb/playdblist.asp?Page=1&sReqMainCategory=000005&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'https://www.playdb.co.kr/playdb/playdblist.asp?Page=1&sReqMainCategory=000005&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
     'playDB_magic_url': [
-        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000006&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
-        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000006&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
+        'https://www.playdb.co.kr/playdb/playdblist.asp?Page=1&sReqMainCategory=000006&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'https://www.playdb.co.kr/playdb/playdblist.asp?Page=1&sReqMainCategory=000006&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1'],
     'playDB_traditional_music_url': [
-        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000007&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
-        'https://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000007&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1']
+        'https://www.playdb.co.kr/playdb/playdblist.asp?Page=1&sReqMainCategory=000007&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'https://www.playdb.co.kr/playdb/playdblist.asp?Page=1&sReqMainCategory=000007&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1']
 }
 
 etc_class = [
