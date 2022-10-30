@@ -22,7 +22,7 @@ def main():
 
     # ----------------------------------------------------------------------------------------------------------------
     # data.py에 직접 입력한 etc_class_list 속 문화 활동 리스트를 CultureClass 객체로 저장
-    instagram_extract(data.etc_class_list)
+    instagram_extract(data.etc_class)
 
 
 if __name__ == '__main__':

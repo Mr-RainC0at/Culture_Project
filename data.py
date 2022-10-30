@@ -38,7 +38,7 @@ playDB_url = {
         'http://www.playdb.co.kr/playdb/playdblist.asp?sReqMainCategory=000007&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=3&sStartYear=&sSelectType=1']
 }
 
-etc_class_list = [
+etc_class = [
     # 예시(인덱스 순):
     # 0:명칭                    ex) "코카-콜라 x 아르떼뮤지엄 : “DREAMWORLD”"
     # 1:분류                    ex) "팝업" or "미술관" or ...
