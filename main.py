@@ -12,7 +12,7 @@ from PlayDB_scraping import *
 def main():
     # ----------------------------------------------------------------------------------------------------------------
     # data 파일의 api_url_dict 속 개별 URL에 대해 api_extract 함수 실행 -> CultureClass 객체로 저장
-    [api_extract(n, u) for n, u in data.api_url]
+    [api_extract(na, u) for na, u in data.api_url_dict]
 
     remove_past_event('fstvlEndDate')  # 축제 행사 관련, 종료 날짜가 지난 행사 삭제
     remove_past_event('eventEndDate')  # 공연 행사 관련, 종료 날짜가 지난 행사 삭제
@@ -22,7 +22,7 @@ def main():
 
     # ----------------------------------------------------------------------------------------------------------------
     # data.py에 직접 입력한 etc_class_list 속 문화 활동 리스트를 CultureClass 객체로 저장
-    instagram_extract(data.etc_class)
+    instagram_extract(data.etc_class_list)
 
 
 if __name__ == '__main__':

@@ -2,7 +2,7 @@ import tkinter
 import customtkinter
 from PIL import Image, ImageTk
 import tkintermapview
-from tkintermapview import map_widget
+from culture_class import CultureClass
 
 customtkinter.set_appearance_mode("System")  # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_default_color_theme("dark-blue")  # Themes: "blue" (standard), "green", "dark-blue"
@@ -182,7 +182,24 @@ class CulturePage(customtkinter.CTkToplevel):
         self.my_image = ImageTk.PhotoImage(new_image)
 
         self.image = customtkinter.CTkLabel(self, image=self.my_image)
-        self.image.grid(row=2, column=0, rowspan=5)
+        self.image.grid(row=2, column=0, rowspan=6)
+
+        customtkinter.CTkLabel(self, text="일시").grid(row=3, column=1)
+        customtkinter.CTkLabel(self, text=f"{p.eventStartDate} ~ {p.eventEndDate}").grid(row=4, column=1)
+        customtkinter.CTkLabel(self, text="장소").grid(row=5, column=1)
+        customtkinter.CTkLabel(self, text=f"{p.roadAddress}").grid(row=6, column=1)
+        customtkinter.CTkLabel(self, text="가격").grid(row=7, column=1)
+        customtkinter.CTkLabel(self, text=f"{p.price}").grid(row=8, column=1)
+
+        self.grid_rowconfigure(8, minsize=20)
+
+        customtkinter.CTkLabel(self, text="상세").grid(row=9, column=0)
+        customtkinter.CTkLabel(self, text=f"{p.information}").grid(row=10, column=0, rowspan=3)
+
+        customtkinter.CTkLabel(self, text="오늘 개장 시간:").grid(row=9, column=1)
+        customtkinter.CTkLabel(self, text=f"{p.roadAddress}").grid(row=10, column=1)
+        customtkinter.CTkLabel(self, text="사이트").grid(row=11, column=1)
+        customtkinter.CTkLabel(self, text=f"{p.page}").grid(row=12, column=1)
 
 
 if __name__ == "__main__":
