@@ -25,8 +25,6 @@ class App(customtkinter.CTk):
         self.rowconfigure(0, minsize=50)
         self.columnconfigure(0, weight=1)
 
-        CulturePage(isOpen[1])
-
         option = 1
 
         if option == 0:
@@ -163,13 +161,20 @@ class CultureMap(customtkinter.CTkFrame):
         self.map_widget.set_position(37.293692, 126.974304)
         self.map_widget.set_zoom(15)
 
-        '''
-        for cu in p:
-            marker = self.map_widget.set_marker(cu.longitude,
-                                                cu.latitude,
-                                                text=cu.eventName)
-            marker.set_text(cu.eventName)
-        '''
+        self.add_markers(isOpen)
+
+    def add_markers(self, p):
+        for c in p:
+            try:
+                marker = self.map_widget.set_marker(deg_x=float(c.latitude),
+                                                    deg_y=float(c.longitude),
+                                                    text=c.eventName,
+                                                    command=CulturePage(c))
+                marker.set_text(c.eventName)
+            except ValueError:
+                pass
+            except AttributeError:
+                pass
 
 
 class CulturePage(customtkinter.CTkToplevel):
