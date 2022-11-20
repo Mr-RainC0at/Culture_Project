@@ -1,6 +1,6 @@
 import pickle
 
 fileObj = open('data.obj', 'rb')
-exampleObj = pickle.load(fileObj)
+CultureClasses = pickle.load(fileObj)
 fileObj.close()
-[print(i.name) for i in exampleObj]
+[print(i.name + " " + i.eventStartDate) for i in CultureClasses]

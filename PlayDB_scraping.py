@@ -8,7 +8,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 import chromedriver_autoinstaller
 
-from data import playDB_url
 from culture_class import CultureClass, CultureClasses
 
 
@@ -149,7 +148,7 @@ def playDB_scraper(url):
                 [print(el) for el in elements]
                 print("---------------------------------------------------------------------------------------------")
 
-                temp_class = CultureClass("PlayDB " + str(k)[-6:], None)
+                temp_class = CultureClass("PlayDB " + k[-6:], None)
                 temp_class.eventType = elements[0]
                 temp_class.eventName = elements[1]
                 temp_class.location = elements[2]

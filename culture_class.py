@@ -5,9 +5,17 @@ class CultureClass:  # 문화 생활 class 정의
     def __init__(self, name, p):
         self.name = name
 
+        self.eventStartDate = "오픈런"
+        self.eventEndDate = "0000-00-00"
+
         # 딕셔너리를 입력하는 경우 딕셔너리의 (키 -> 값) 을 class의 (인스턴스 속성 -> 값)으로 지정:
         if type(p) == dict:
             [setattr(self, k, v) for k, v in p.items()]
+
+            if hasattr(self, "fstvlStartDate"):
+                self.eventStartDate = self.fstvlStartDate
+            if hasattr(self, "fstvlEndDate"):
+                self.eventEndDate = self.fstvlEndDate
 
         # 리스트를 입력하는 경우 순서에 따라 속성값 부여
         elif type(p) == list:

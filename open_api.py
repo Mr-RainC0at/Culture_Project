@@ -39,6 +39,8 @@ def remove_past_event(parameter):
     for n in reversed(CultureClasses):  # 함수 삭제시 index 검색에 영향이 없도록 역순으로 index 검색
         if hasattr(n, parameter):  # 입력한 파라미터를 객체가 보유하고 있는지 확인
             # 'yyyy-mm-dd' 형태의 string에서 datetime 모듈 사용, 현재 날짜와 비교하여 날짜가 지난 경우 class 객체 삭제:
-            y1, m1, d1 = getattr(n, parameter).split('-')
-            if datetime.date(int(y1), int(m1), int(d1)) < datetime.date.today():
+            y1, m1, d1 = str(getattr(n, parameter)).split('-')
+            if y1 == "0000":
+                setattr(n, parameter, "오픈런")
+            elif datetime.date(int(y1), int(m1), int(d1)) < datetime.date.today():
                 CultureClasses.remove(n)
