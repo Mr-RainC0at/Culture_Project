@@ -163,6 +163,7 @@ def playDB_scraper(url):
                 temp_class.duration = elements[6]
                 temp_class.webpage = elements[7]
                 temp_class.information = elements[8]
+                temp_class.price = "링크 참조"
 
                 CultureClasses.append(temp_class)
 
