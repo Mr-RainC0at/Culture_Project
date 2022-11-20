@@ -2,10 +2,13 @@ import tkinter
 import customtkinter
 from PIL import Image, ImageTk
 import tkintermapview
-from culture_class import CultureClass
-
+import pickle
 customtkinter.set_appearance_mode("System")  # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_default_color_theme("dark-blue")  # Themes: "blue" (standard), "green", "dark-blue"
+
+fileObj = open('isOpen.obj', 'rb')
+isOpen = pickle.load(fileObj)
+fileObj.close()
 
 
 class App(customtkinter.CTk):
@@ -21,6 +24,8 @@ class App(customtkinter.CTk):
 
         self.rowconfigure(0, minsize=50)
         self.columnconfigure(0, weight=1)
+
+        CulturePage(isOpen[-1])
 
         option = 1
 
@@ -171,11 +176,9 @@ class CulturePage(customtkinter.CTkToplevel):
     def __init__(self, p):
         super().__init__()
 
-        culture_name = customtkinter.CTkLabel(text="컬쳐페이지")
-        culture_name.grid(row=0, column=0)
-
-        culture_name = customtkinter.CTkLabel(text=p.eventName)
-        culture_name.grid(row=1, column=0)
+        customtkinter.CTkLabel(self, text="컬쳐페이지").grid(row=0, column=0)
+        if hasattr(p, "eventName"):
+            customtkinter.CTkLabel(self, text=p.eventName).grid(row=1, column=0)
 
         raw_image = Image.open("C:/Users/User/PycharmProjects/CultureProject/download.png")
         new_image = raw_image.resize((200, 170))
@@ -187,19 +190,26 @@ class CulturePage(customtkinter.CTkToplevel):
         customtkinter.CTkLabel(self, text="일시").grid(row=3, column=1)
         customtkinter.CTkLabel(self, text=f"{p.eventStartDate} ~ {p.eventEndDate}").grid(row=4, column=1)
         customtkinter.CTkLabel(self, text="장소").grid(row=5, column=1)
-        customtkinter.CTkLabel(self, text=f"{p.roadAddress}").grid(row=6, column=1)
-        customtkinter.CTkLabel(self, text="가격").grid(row=7, column=1)
-        customtkinter.CTkLabel(self, text=f"{p.price}").grid(row=8, column=1)
+        if hasattr(p, "roadAddress"):
+            customtkinter.CTkLabel(self, text=f"{p.roadAddress}").grid(row=6, column=1)
+        elif hasattr(p, "location"):
+            customtkinter.CTkLabel(self, text="가격").grid(row=7, column=1)
+        if hasattr(p, "price"):
+            customtkinter.CTkLabel(self, text=p.price).grid(row=8, column=1)
 
         self.grid_rowconfigure(8, minsize=20)
 
         customtkinter.CTkLabel(self, text="상세").grid(row=9, column=0)
-        customtkinter.CTkLabel(self, text=f"{p.information}").grid(row=10, column=0, rowspan=3)
+        if hasattr(p, "information"):
+            customtkinter.CTkLabel(self, text=p.information, wraplength=500).grid(row=10, column=0, rowspan=10)
 
-        customtkinter.CTkLabel(self, text="오늘 개장 시간:").grid(row=9, column=1)
-        customtkinter.CTkLabel(self, text=f"{p.mondayStartTime} ~ {p.mondayEndTime}").grid(row=10, column=1)
-        customtkinter.CTkLabel(self, text="사이트").grid(row=11, column=1)
-        customtkinter.CTkLabel(self, text=f"{p.page}").grid(row=12, column=1)
+        if hasattr(p, "mondayStartTime") and hasattr(p, "mondayEndTime"):
+            customtkinter.CTkLabel(self, text="오늘 개장 시간:").grid(row=9, column=1)
+            customtkinter.CTkLabel(self, text=f"{p.mondayStartTime} ~ {p.mondayEndTime}").grid(row=10, column=1)
+
+        if hasattr(p, "page"):
+            customtkinter.CTkLabel(self, text="사이트").grid(row=11, column=1)
+            customtkinter.CTkLabel(self, text=f"{p.page}").grid(row=12, column=1)
 
 
 if __name__ == "__main__":
