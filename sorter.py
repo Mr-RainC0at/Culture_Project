@@ -1,13 +1,28 @@
 import pickle
+import datetime
 
 fileObj = open('data.obj', 'rb')
-CultureClasses = pickle.load(fileObj)
+AllCultureClasses = pickle.load(fileObj)
 fileObj.close()
-[print(i.name + " " + i.eventStartDate) for i in CultureClasses]
+[print(i.name + " " + i.eventStartDate) for i in AllCultureClasses]
 
-# 가장 최근에 시작한 객체 20개를 리스트에 저장
-recent=[None]*20
+# 오늘 시작한 객체를 리스트에 저장
+recent=[]
+for n in AllCultureClasses:
+    y1, m1, d1 = str(getattr(n, "eventStartDate")).split("-")
+    if datetime.date(int(y1), int(m1), int(d1)) == datetime.date.today():
+        recent.append(n)
 
-for n in CultureClasses:
-    for i in range(20):
-        if recent[i] < n.eventStartDate
+[print(i.name) for i in recent]
+
+isOpen=[]
+for n in AllCultureClasses:
+    y1, m1, d1 = str(getattr(n, "eventStartDate")).split("-")
+    try:
+        y2, m2, d2 = str(getattr(n, "eventEndDate")).split("-")
+    except ValueError:
+        pass
+    if datetime.date(int(y1), int(m1), int(d1)) <= datetime.date.today() <= datetime.date(int(y2), int(m2), int(d2)):
+        isOpen.append(n)
+
+[print(i.eventEndDate) for i in isOpen]
