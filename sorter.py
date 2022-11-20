@@ -15,7 +15,7 @@ def main():
         if datetime.date(int(y1), int(m1), int(d1)) == datetime.date.today():
             recent.append(n)
 
-    [print(i.name) for i in recent]
+    # [print(i.name) for i in recent]
 
     fileObj = open('recent.obj', 'wb')
     pickle.dump(recent, fileObj)
@@ -33,7 +33,7 @@ def main():
                                                                                               int(d2)):
             isOpen.append(n)
 
-    [print(i.name) for i in isOpen]
+    # [print(i.name) for i in isOpen]
 
     fileObj = open('isOpen.obj', 'wb')
     pickle.dump(isOpen, fileObj)

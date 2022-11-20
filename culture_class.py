@@ -6,7 +6,7 @@ class CultureClass:  # 문화 생활 class 정의
         self.name = name
 
         self.eventStartDate = "1900-01-01"
-        self.eventEndDate = "1900-01-01"
+        self.eventEndDate = "오픈런"
 
         # 딕셔너리를 입력하는 경우 딕셔너리의 (키 -> 값) 을 class의 (인스턴스 속성 -> 값)으로 지정:
         if type(p) == dict:

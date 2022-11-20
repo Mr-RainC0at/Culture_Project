@@ -25,7 +25,7 @@ class App(customtkinter.CTk):
         self.rowconfigure(0, minsize=50)
         self.columnconfigure(0, weight=1)
 
-        CulturePage(isOpen[-1])
+        CulturePage(isOpen[1])
 
         option = 1
 

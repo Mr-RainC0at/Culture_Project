@@ -11,6 +11,7 @@ import pickle
 
 # 프로그램 실행
 def main():
+
     # ----------------------------------------------------------------------------------------------------------------
     # data 파일의 api_url_dict 속 개별 URL에 대해 api_extract 함수 실행 -> CultureClass 객체로 저장
     [api_extract(n, u) for n, u in data.api_url_dict.items()]
