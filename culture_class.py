@@ -1,5 +1,4 @@
 from geopy.geocoders import Nominatim
-import re
 
 
 class CultureClass:  # 문화 생활 class 정의

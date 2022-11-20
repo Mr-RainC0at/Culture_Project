@@ -1,7 +1,3 @@
-# https://nureechoi2200.wordpress.com/2020/06/24/playdb-%ED%81%AC%EB%A1%A4%EB%A7%81-playdb%EC%97%90-%EC%98%AC%EB%9D%BC%EC%99%80%EC%9E%88%EB%8A%94-%EA%B3%B5%EC%97%B0-id%EB%A5%BC-%EC%A0%80%EC%9E%A5%ED%95%B4%EB%B3%B4%EC%9E%90-1/
-# https://riucc.tistory.com/372
-# https://riucc.tistory.com/373?category=743461
-
 # selenium module 활용하여 자료를 추출
 
 from selenium import webdriver
@@ -33,19 +29,19 @@ def playDB_scraper(url):
     driver.get(url)
     all_pages = 0
 
-    for n in driver.find_elements(By.XPATH, '//*[@id="contents"]/div[2]/table/tbody/tr[8]/td/table/tbody/tr[2]/td/table/tbody/tr/td[1]/table/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/a[1]/b/font'):  # 제목
+    for n in driver.find_elements(By.XPATH,
+                                  '//*[@id="contents"]/div[2]/table/tbody/tr[8]/td/table/tbody/tr[2]/td/table/tbody/tr/td[1]/table/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/a[1]/b/font'):  # 제목
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.XPATH,
-                                                                        '//*[@id="contents"]/div[2]/table/tbody/tr[8]/td/table/tbody/tr[2]/td/table/tbody/tr/td[1]/table/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/a[1]/b/font')))
+                                            '//*[@id="contents"]/div[2]/table/tbody/tr[8]/td/table/tbody/tr[2]/td/table/tbody/tr/td[1]/table/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/a[1]/b/font')))
         print(n.text)
-        all_pages += int(int(n.text[n.text.find("(") + 1:n.text.find(")")])/15)+1
-    driver.refresh()
+        all_pages += int(int(n.text[n.text.find("(") + 1:n.text.find(")")]) / 15) + 1
 
     for page in range(all_pages):
         try:
             links = []
 
-            url = url[0:51] + str(page+1) + url[52:]
+            url = url[0:51] + str(page + 1) + url[52:]
             # print(page+1)
             print(url)
             driver.get(url)
@@ -58,15 +54,17 @@ def playDB_scraper(url):
 
             for k in links:
                 driver.get(k)
-                elements = [""]*9
-                for n in driver.find_elements(By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[1]/td[2]/a[1]'):  # 종류
+                elements = [""] * 9
+                for n in driver.find_elements(By.XPATH,
+                                              '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[1]/td[2]/a[1]'):  # 종류
                     WebDriverWait(driver, 5).until(
                         EC.presence_of_element_located(
                             (By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[1]/td[2]/a[1]')))
                     # print("제목  " + n.text)
                     elements[0] = n.text
 
-                for n in driver.find_elements(By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[1]/table/tbody/tr[1]/td/span[1]'):  # 제목
+                for n in driver.find_elements(By.XPATH,
+                                              '//*[@id="wrap"]/div[3]/div[1]/div[1]/table/tbody/tr[1]/td/span[1]'):  # 제목
                     WebDriverWait(driver, 5).until(
                         EC.presence_of_element_located(
                             (By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[1]/table/tbody/tr[1]/td/span[1]')))
@@ -74,7 +72,8 @@ def playDB_scraper(url):
                     elements[1] = n.text
                 # driver.refresh()
 
-                for n in driver.find_elements(By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[3]/td[2]/a'):  # 장소
+                for n in driver.find_elements(By.XPATH,
+                                              '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[3]/td[2]/a'):  # 장소
                     WebDriverWait(driver, 5).until(
                         EC.presence_of_element_located(
                             (By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[3]/td[2]/a')))
@@ -82,7 +81,8 @@ def playDB_scraper(url):
                     elements[2] = n.text
                 # driver.refresh()
 
-                for n in driver.find_elements(By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[2]/td[2]'):  # 날짜
+                for n in driver.find_elements(By.XPATH,
+                                              '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[2]/td[2]'):  # 날짜
                     WebDriverWait(driver, 5).until(
                         EC.presence_of_element_located(
                             (By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[2]/td[2]')))
@@ -100,7 +100,8 @@ def playDB_scraper(url):
                 elements[4] = cast
                 # driver.refresh()
 
-                for n in driver.find_elements(By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[5]/td[2]'):  # 관람 등급
+                for n in driver.find_elements(By.XPATH,
+                                              '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[5]/td[2]'):  # 관람 등급
                     WebDriverWait(driver, 5).until(
                         EC.presence_of_element_located(
                             (By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[5]/td[2]')))
@@ -111,7 +112,8 @@ def playDB_scraper(url):
                         elements[5] = n.text
                 # driver.refresh()
 
-                for n in driver.find_elements(By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[6]/td[2]'):  # 관람 시간
+                for n in driver.find_elements(By.XPATH,
+                                              '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[6]/td[2]'):  # 관람 시간
                     WebDriverWait(driver, 5).until(
                         EC.presence_of_element_located(
                             (By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[6]/td[2]')))
@@ -120,7 +122,8 @@ def playDB_scraper(url):
                         elements[6] = n.text
                 # driver.refresh()
 
-                for n in driver.find_elements(By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[7]/td[2]/a'):  # 사이트
+                for n in driver.find_elements(By.XPATH,
+                                              '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[7]/td[2]/a'):  # 사이트
                     WebDriverWait(driver, 5).until(
                         EC.presence_of_element_located(
                             (By.XPATH, '//*[@id="wrap"]/div[3]/div[1]/div[2]/table/tbody/tr[7]/td[2]/a')))
@@ -146,11 +149,16 @@ def playDB_scraper(url):
                 [print(el) for el in elements]
                 print("---------------------------------------------------------------------------------------------")
 
-                temp_class = CultureClass("PlayDB" + str(k), None)
+                temp_class = CultureClass("PlayDB " + str(k)[-6:], None)
                 temp_class.eventType = elements[0]
                 temp_class.eventName = elements[1]
                 temp_class.location = elements[2]
-                temp_class.date = elements[3]
+
+                date1, date2 = elements[3].split(" ~ ")
+
+                temp_class.eventStartDate = date1.replace("/", "-")
+                temp_class.eventEndDate = date2.replace("/", "-")
+
                 temp_class.cast = elements[4]
                 temp_class.age = elements[5]
                 temp_class.duration = elements[6]
