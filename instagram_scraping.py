@@ -64,6 +64,7 @@ def print_data_instagram(username):
 def instagram_extract(li):
     for i, x in enumerate(li):
         CultureClasses.append(CultureClass(x[1] + str(i), x))
+        print(x[1] + str(i))
 
 
 def main():

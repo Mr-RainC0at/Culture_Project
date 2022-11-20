@@ -197,7 +197,7 @@ class CulturePage(customtkinter.CTkToplevel):
         customtkinter.CTkLabel(self, text=f"{p.information}").grid(row=10, column=0, rowspan=3)
 
         customtkinter.CTkLabel(self, text="오늘 개장 시간:").grid(row=9, column=1)
-        customtkinter.CTkLabel(self, text=f"{p.roadAddress}").grid(row=10, column=1)
+        customtkinter.CTkLabel(self, text=f"{p.mondayStartTime} ~ {p.mondayEndTime}").grid(row=10, column=1)
         customtkinter.CTkLabel(self, text="사이트").grid(row=11, column=1)
         customtkinter.CTkLabel(self, text=f"{p.page}").grid(row=12, column=1)
 

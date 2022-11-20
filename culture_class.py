@@ -8,7 +8,7 @@ class CultureClass:  # 문화 생활 class 정의
 
         # 딕셔너리를 입력하는 경우 딕셔너리의 (키 -> 값) 을 class의 (인스턴스 속성 -> 값)으로 지정:
         if type(p) == dict:
-            [setattr(self, k, v) for k, v in p]
+            [setattr(self, k, v) for k, v in p.items()]
 
         # 리스트를 입력하는 경우 순서에 따라 속성값 부여
         elif type(p) == list:
@@ -27,6 +27,9 @@ class CultureClass:  # 문화 생활 class 정의
                 geo = geo_local.geocode(remove_detail)  # 도로명 주소에서 위도, 걍도 얻는 geopy 모듈 사용
                 self.latitude, self.longitude = [geo.latitude, geo.longitude]   # class에 위도, 경도 속성 부여
             except ValueError:
+                # 입력한 도로명 주소에 오류가 있는 경우 위도, 경도 = 성균관대학교 주소
+                self.latitude, self.longitude = [126.974304, 37.2936923]
+            except AttributeError:
                 # 입력한 도로명 주소에 오류가 있는 경우 위도, 경도 = 성균관대학교 주소
                 self.latitude, self.longitude = [126.974304, 37.2936923]
 

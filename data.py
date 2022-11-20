@@ -10,9 +10,17 @@ api_url_dict = {
     'Boulevard': 'http://api.data.go.kr/openapi/tn_pubr_public_sttree_stret_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=xml',
     'Tourist Attraction': 'http://api.data.go.kr/openapi/tn_pubr_public_sttree_stret_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=xml',
     'Relics': 'http://api.data.go.kr/openapi/tn_pubr_public_nvpc_cltur_relics_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=xml',
-    'Library': 'http://api.data.go.kr/openapi/tn_pubr_public_lbrry_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=xml',
+    'Library': 'http://api.data.go.kr/openapi/tn_pubr_public_lbrry_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=xml'
     # 'City Park': 'http://api.data.go.kr/openapi/tn_pubr_public_cty_park_info_api?serviceKey=R8BXy6o1Q5yjiq3dcCId8PVkHF24U99GPcnwOIMKDNzGTCCnEOLDDxSnHPHnKQhHepBZOugew%2F%2BWdMX4EaMLyg%3D%3D&pageNo=0&numOfRows=100&type=xml'
 }
+
+playDB_url = [
+        'http://www.playdb.co.kr/playdb/playdblist.asp?Page=1&sReqMainCategory=000001&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'http://www.playdb.co.kr/playdb/playdblist.asp?Page=1&sReqMainCategory=000002&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'http://www.playdb.co.kr/playdb/playdblist.asp?Page=1&sReqMainCategory=000003&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'http://www.playdb.co.kr/playdb/playdblist.asp?Page=1&sReqMainCategory=000004&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1',
+        'http://www.playdb.co.kr/playdb/playdblist.asp?Page=1&sReqMainCategory=000005&sReqSubCategory=&sReqDistrict=&sReqTab=2&sPlayType=2&sStartYear=&sSelectType=1'
+      ]
 
 etc_class_list = [
     # 예시(인덱스 순):
